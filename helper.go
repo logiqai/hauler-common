@@ -40,7 +40,6 @@ func ParseEvent(meventBytes []byte, flavor string) (map[string]interface{}, erro
 	// JSON Processing
 	je := json.Unmarshal(meventBytes, &mevent)
 	if je != nil {
-		logEntry.ContextLogger().Errorf("Error unmarshalling event: %v %s", je, mevent)
 		return nil, je
 	}
 
